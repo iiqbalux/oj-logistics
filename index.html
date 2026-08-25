@@ -410,10 +410,14 @@
         </p>
         <h2 class="font-display font-extrabold text-2xl tracking-tight leading-[1.1] mb-7">How can we help?</h2>
 
-        <form class="enquiry-form space-y-5" data-variant="desktop">
+        <form class="enquiry-form space-y-5" data-variant="desktop" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="enquiry" />
+          <div class="hidden" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </div>
           <div>
             <label for="service-desktop" class="block font-display font-bold text-sm mb-2">Service needed</label>
-            <select id="service-desktop" required class="w-full appearance-none bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23202020%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.1rem]">
+            <select id="service-desktop" name="service" required class="w-full appearance-none bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23202020%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.1rem]">
               <option value="" selected disabled>Choose a service</option>
               <option>MOT Testing</option>
               <option>Servicing</option>
@@ -426,20 +430,20 @@
           <div class="grid grid-cols-2 gap-4">
             <div>
               <label for="reg-desktop" class="block font-display font-bold text-sm mb-2">Registration</label>
-              <input id="reg-desktop" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+              <input id="reg-desktop" name="registration" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
             </div>
             <div>
               <label for="date-desktop" class="block font-display font-bold text-sm mb-2">Preferred day</label>
-              <input id="date-desktop" type="date" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+              <input id="date-desktop" name="preferred_day" type="date" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
             </div>
           </div>
           <div>
             <label for="email-desktop" class="block font-display font-bold text-sm mb-2">Email address</label>
-            <input id="email-desktop" type="email" required placeholder="you@example.com" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+            <input id="email-desktop" name="email" type="email" required placeholder="you@example.com" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
           </div>
           <div id="comments-desktop-wrap" data-comments-wrap class="hidden">
             <label for="comments-desktop" class="block font-display font-bold text-sm mb-2">Additional comments</label>
-            <textarea id="comments-desktop" rows="3" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 resize-none"></textarea>
+            <textarea id="comments-desktop" name="comments" rows="3" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 resize-none"></textarea>
           </div>
           <button type="submit" data-submit-btn class="metal-green w-full font-display font-bold text-sm tracking-wide text-white px-7 py-4 rounded-md shadow-[0_14px_34px_-10px_rgba(1,80,70,0.7)] hover:shadow-[0_18px_40px_-8px_rgba(12,138,110,0.75)] hover:-translate-y-0.5 active:scale-[0.97] active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green spring transition-all duration-300">
             Send enquiry
@@ -793,11 +797,15 @@
 
     <div class="reveal w-full" style="transition-delay: 120ms;">
       <div class="metal-silver-surface relative text-ink-900 rounded-2xl p-8 sm:p-12 shadow-[0_45px_90px_-20px_rgba(0,0,0,0.65)] ring-1 ring-black/10">
-        <form class="enquiry-form space-y-6" data-variant="booking">
+        <form class="enquiry-form space-y-6" data-variant="booking" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="enquiry" />
+          <div class="hidden" aria-hidden="true">
+            <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+          </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <div>
               <label for="service-booking" class="block font-display font-bold text-sm mb-2">Service needed</label>
-              <select id="service-booking" required class="w-full appearance-none bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23202020%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.1rem]">
+              <select id="service-booking" name="service" required class="w-full appearance-none bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23202020%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_1rem_center] bg-[length:1.1rem]">
                 <option value="" selected disabled>Choose a service</option>
                 <option>MOT Testing</option>
                 <option>Servicing</option>
@@ -809,20 +817,20 @@
             </div>
             <div>
               <label for="reg-booking" class="block font-display font-bold text-sm mb-2">Registration</label>
-              <input id="reg-booking" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+              <input id="reg-booking" name="registration" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
             </div>
             <div>
               <label for="date-booking" class="block font-display font-bold text-sm mb-2">Preferred day</label>
-              <input id="date-booking" type="date" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+              <input id="date-booking" name="preferred_day" type="date" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
             </div>
             <div>
               <label for="email-booking" class="block font-display font-bold text-sm mb-2">Email address</label>
-              <input id="email-booking" type="email" required placeholder="you@example.com" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
+              <input id="email-booking" name="email" type="email" required placeholder="you@example.com" class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200" />
             </div>
           </div>
           <div id="comments-booking-wrap" data-comments-wrap class="hidden">
             <label for="comments-booking" class="block font-display font-bold text-sm mb-2">Additional comments</label>
-            <textarea id="comments-booking" rows="3" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 resize-none"></textarea>
+            <textarea id="comments-booking" name="comments" rows="3" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-[#f5f5f3] border border-black/10 rounded-lg shadow-[inset_0_1px_3px_rgba(0,0,0,0.15)] px-4 py-3.5 text-[15px] text-ink-900 placeholder:text-[#9ca3af] focus:outline-none focus:ring-2 focus:ring-brand-greenlight focus:border-brand-greenlight spring transition-colors duration-200 resize-none"></textarea>
           </div>
           <div>
             <button type="submit" data-submit-btn class="metal-green shrink-0 font-display font-bold text-sm tracking-wide text-white px-10 py-4 rounded-md inline-flex items-center justify-center gap-2 shadow-[0_14px_34px_-10px_rgba(1,80,70,0.7)] hover:shadow-[0_18px_40px_-8px_rgba(12,138,110,0.75)] hover:-translate-y-0.5 active:scale-[0.97] active:translate-y-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green spring transition-all duration-300">
@@ -885,10 +893,14 @@
   </button>
   <div id="mobileFormBody" class="grid transition-[grid-template-rows] duration-300 ease-in-out" style="grid-template-rows: 1fr;">
     <div class="overflow-hidden">
-      <form class="enquiry-form space-y-3 pt-3" data-variant="mobile">
+      <form class="enquiry-form space-y-3 pt-3" data-variant="mobile" name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="enquiry" />
+        <div class="hidden" aria-hidden="true">
+          <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </div>
         <div>
           <label for="service-mobile" class="block font-display font-bold text-xs mb-1.5">Service needed</label>
-          <select id="service-mobile" required class="w-full appearance-none bg-ink-700 ring-1 ring-white/10 rounded-lg pl-3 pr-7 py-2.5 text-[13px] font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23c4c4c4%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_0.5rem_center] bg-[length:0.9rem]">
+          <select id="service-mobile" name="service" required class="w-full appearance-none bg-ink-700 ring-1 ring-white/10 rounded-lg pl-3 pr-7 py-2.5 text-[13px] font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200 bg-[url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%23c4c4c4%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.23%207.21a.75.75%200%20011.06.02L10%2011.19l3.71-3.96a.75.75%200%201%201.08%201.04l-4.25%204.5a.75.75%200%2001-1.08%200l-4.25-4.5a.75.75%200%2001.02-1.06z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-no-repeat bg-[right_0.5rem_center] bg-[length:0.9rem]">
             <option value="" selected disabled>Select service</option>
             <option>MOT Testing</option>
             <option>Servicing</option>
@@ -901,20 +913,20 @@
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label for="reg-mobile" class="block font-display font-bold text-xs mb-1.5">Registration</label>
-            <input id="reg-mobile" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
+            <input id="reg-mobile" name="registration" type="text" placeholder="AB12 CDE" maxlength="8" class="w-full uppercase placeholder:normal-case bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
           </div>
           <div>
             <label for="date-mobile" class="block font-display font-bold text-xs mb-1.5">Preferred day</label>
-            <input id="date-mobile" type="date" class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
+            <input id="date-mobile" name="preferred_day" type="date" class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
           </div>
         </div>
         <div>
           <label for="email-mobile" class="block font-display font-bold text-xs mb-1.5">Email address</label>
-          <input id="email-mobile" type="email" required placeholder="you@example.com" class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
+          <input id="email-mobile" name="email" type="email" required placeholder="you@example.com" class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200" />
         </div>
         <div id="comments-mobile-wrap" data-comments-wrap class="hidden">
           <label for="comments-mobile" class="block font-display font-bold text-xs mb-1.5">Additional comments</label>
-          <textarea id="comments-mobile" rows="2" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200 resize-none"></textarea>
+          <textarea id="comments-mobile" name="comments" rows="2" placeholder="Tell us more about what your vehicle needs..." class="w-full bg-ink-700 ring-1 ring-white/10 rounded-lg px-3 py-2.5 text-[13px] font-medium text-white placeholder:text-brand-silver/60 focus:outline-none focus:ring-2 focus:ring-brand-greenbright spring transition-all duration-200 resize-none"></textarea>
         </div>
         <button type="submit" data-submit-btn class="metal-green w-full font-display font-bold text-[13px] tracking-wide text-white px-5 py-3 rounded-lg active:scale-[0.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-greenbright spring transition-all duration-200">
           Send enquiry
@@ -974,6 +986,12 @@
     }
   });
 
+  function encodeFormData(data) {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  }
+
   document.querySelectorAll('.enquiry-form').forEach((form) => {
     const btn = form.querySelector('[data-submit-btn]');
     if (!btn) return;
@@ -984,16 +1002,35 @@
       if (btn.disabled) return;
 
       btn.disabled = true;
-      btn.classList.add('scale-95');
-      btn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> Request sent';
-      btn.classList.add('flex', 'items-center', 'justify-center', 'gap-2');
+      btn.classList.add('scale-95', 'flex', 'items-center', 'justify-center', 'gap-2');
 
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.classList.remove('scale-95');
-        btn.disabled = false;
-        form.reset();
-      }, 2400);
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(data),
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error('Form submission failed');
+          btn.innerHTML = '<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> Request sent';
+
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('scale-95');
+            btn.disabled = false;
+            form.reset();
+          }, 2400);
+        })
+        .catch(() => {
+          btn.innerHTML = 'Something went wrong — try again';
+
+          setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.remove('scale-95');
+            btn.disabled = false;
+          }, 2400);
+        });
     });
   });
 
